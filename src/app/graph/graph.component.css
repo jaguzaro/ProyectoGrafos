@@ -1,0 +1,60 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+.title-graph{
+    font: normal normal 800 25px/30px;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-size: 40px;
+}
+
+.btn::ng-deep{
+    border-radius: 0 !important;
+    background-color: #ECB365;
+    color: white;
+    border-color: #1A5F7A !important;
+}
+
+.btn-true{
+    background-color: #B2B2B2 !important;
+}
+
+.title-way{
+    font: normal normal 800 25px/30px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 40px;
+    color: #1A5F7A;
+}
+
+.no-way{
+    color: #C5D8E1;
+}
+
+.text-no-way{
+    font: normal normal 600 25px/30px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+    color: #C5D8E1;
+}
+
+.node-short{
+    fill: rgb(124,252,0) !important;
+}
+
+::ng-deep.node-short{
+    fill: rgb(124,252,0) !important;
+}
+
+.line-short{
+    stroke: #4AE82A !important;
+}
+
+::ng-deep.line-short{
+    stroke: #4AE82A !important;
+}
+
+.font-way{
+    font: normal normal 600 20px/25px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 40px;
+    color: black;
+}

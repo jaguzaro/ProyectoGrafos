@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-12 d-flex">
+        <div class="col-6 h-100" style="min-height: 950px; background-color: #1A5F7A;">
+            <div class="row justify-content-center d-flex">
+                <div class="col-12 py-3 px-5">
+                    <label class="title-graph mx-2">Crear Grafo</label>
+                </div>
+                <div class="col-12 justify-content-center d-flex my-2">
+                    <svg #svg width="850" height="700" style="background-color: white;"></svg>
+                </div>
+                <div class="col-11 justify-content-center d-flex my-2 px-4">
+                    <div class="col-2">
+                        <button class="btn btn-light me-2 w-100 border" (click)="removeNodes()" [ngClass]="{'btn-true': deleteNode}"><i class="fas fa-trash-alt pe-2"></i>Borrar</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-light me-2 w-100 border" (click)="joinNodes()" [ngClass]="{'btn-true': joinNode}"><i class="fas fa-arrows-alt-h pe-2"></i>Unir Nodos</button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-light me-2 w-100 border" (click)="dragNodes()" [ngClass]="{'btn-true': dragNode}"><i class="fas fa-hand-rock pe-2"></i>Mover Nodos</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-light me-2 w-100 border" (click)="removeAll()"><i class="fas fa-eraser pe-2"></i>Borrar Todo</button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-light me-2 w-100 border" (click)="drawNodes()" [ngClass]="{'btn-true': drawNode}"><i class="fas fa-eraser pe-2"></i>Dibujar Nodo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 h-100" style="min-height: 950px; background-color: white;">
+            <div class="row">
+                <div class="col-12 px-3">
+                    <div class="col-12 justify-content-center d-flex">
+                        <div class="col-12 py-3 px-5">
+                            <label class="title-way mx-2">Caminos mas cortos</label>
+                        </div>
+                    </div>
+                    <div class="col-12 pt-3 px-5" *ngIf="!viewShortWay">
+                        <div class="row d-flex">
+                            <div class="col-6 d-flex flex-row">
+                                <div class="col-12 d-flex flex-row">
+                                    <div class="col-3">
+                                        <label>Nodo inicio</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="nInit">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex flex-row">
+                                    <div class="col-3">
+                                        <label>Nodo Final</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="nFinish">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <button class="btn btn-light me-2 w-100 border" [ngClass]="{'btn-true': drawNode}" (click)="shortWay()"><i class="fas fa-eraser pe-2"></i>Camino mas corto</button>
+                                </div>  
+                            </div>
+                        </div>     
+                    </div>
+                    <div class="col-12 justify-content-center align-items-center d-flex" style="margin-top: 10rem" *ngIf="!viewShortWay">
+                        <div class="col-12 pb-3 px-5 justify-content-center align-items-center d-flex" style="height: 160px;">
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <i class="fas fa-sad-tear no-way" style="transform: scale(10);"></i>
+                            </div>     
+                        </div>
+                    </div>
+                    <div class="col-12 py-3 px-5 justify-content-center align-items-center d-flex" *ngIf="!viewShortWay">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <label class="text-no-way">No has buscado el camino mas corto</label>
+                        </div>
+                           
+                    </div>
+                    <div #destiny class="col-12 py-3 px-5 justify-content-center align-items-center d-flex">
+                        
+                    </div>
+                    <div class="col-12 py-3 px-5 justify-content-center align-items-center d-flex">
+                        <div *ngFor="let item of pathGraph; let i = index">
+                            <label class="font-way">{{item}}<i class="fas fa-long-arrow-right px-2" style="transform: scale(1);" *ngIf="i != pathGraph.length -1 "></i></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
